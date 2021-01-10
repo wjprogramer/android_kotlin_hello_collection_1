@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyBirthday">
-        <activity android:name=".activities.diceRoller.DiceRollerActivity"></activity>
+        <activity android:name=".activities.tipTime.TipTimeActivity"></activity>
+        <activity android:name=".activities.menu.MenuActivity" />
+        <activity android:name=".activities.diceRoller.DiceRollerActivity" />
         <activity android:name=".activities.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
