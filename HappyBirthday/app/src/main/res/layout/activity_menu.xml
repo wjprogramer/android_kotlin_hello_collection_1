@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".activities.menu.MenuActivity">
 
     <Button
         android:id="@+id/button_dice_roller"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="@string/dice_roller"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,8 +20,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/menu"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,10 +30,18 @@
         android:id="@+id/button_tip_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/tip_time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_dice_roller" />
+
+    <Button
+        android:id="@+id/button_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_tip_time" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
