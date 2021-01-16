@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.wjprogrammer.happybirthday.R
 import com.wjprogrammer.happybirthday.activities.affirmations.AffirmationsActivity
+import com.wjprogrammer.happybirthday.activities.dessert_clicker.DessertClickerActivity
 import com.wjprogrammer.happybirthday.activities.diceRoller.DiceRollerActivity
 import com.wjprogrammer.happybirthday.activities.themes.ThemeActivity
 import com.wjprogrammer.happybirthday.activities.tipTime.TipTimeActivity
@@ -44,6 +45,12 @@ class MenuActivity : AppCompatActivity() {
         val wordsButton: Button = findViewById(R.id.button_words)
         wordsButton.setOnClickListener {
             val intent = Intent(this, WordsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val dessertClickerButton: Button = findViewById(R.id.button_dessert_clicker)
+        dessertClickerButton.setOnClickListener {
+            val intent = Intent(this, DessertClickerActivity::class.java)
             startActivity(intent)
         }
     }

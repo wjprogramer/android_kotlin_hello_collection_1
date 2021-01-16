@@ -24,4 +24,11 @@
     <style name="Widget.Words.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textAppearance">?attr/textAppearanceHeadline4</item>
     </style>
+    
+    <!--  Dessert Clicker  -->
+    <style name="DessertClicker">
+        <item name="colorPrimary">@color/teal_1</item>
+        <item name="colorPrimaryVariant">@color/teal_2</item>
+        <item name="colorSecondary">@color/pink_1</item>
+    </style>
 </resources>
