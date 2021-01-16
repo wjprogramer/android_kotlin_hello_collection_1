@@ -9,6 +9,7 @@ import com.wjprogrammer.happybirthday.activities.affirmations.AffirmationsActivi
 import com.wjprogrammer.happybirthday.activities.diceRoller.DiceRollerActivity
 import com.wjprogrammer.happybirthday.activities.themes.ThemeActivity
 import com.wjprogrammer.happybirthday.activities.tipTime.TipTimeActivity
+import com.wjprogrammer.happybirthday.activities.words.WordsActivity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -37,6 +38,12 @@ class MenuActivity : AppCompatActivity() {
         val affirmationButton: Button = findViewById(R.id.button_affirmations)
         affirmationButton.setOnClickListener {
             val intent = Intent(this, AffirmationsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val wordsButton: Button = findViewById(R.id.button_words)
+        wordsButton.setOnClickListener {
+            val intent = Intent(this, WordsActivity::class.java)
             startActivity(intent)
         }
     }

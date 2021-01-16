@@ -41,6 +41,7 @@
     <string name="email_icon">email icon</string>
     <string name="theme">Theme</string>
 
+    <!--  Affirmation  -->
     <string name="affirmation1">I am strong.</string>
     <string name="affirmation2">I believe in myself.</string>
     <string name="affirmation3">Each day is a new opportunity to grow and be a better version of myself.</string>
@@ -52,5 +53,12 @@
     <string name="affirmation9">Things will unfold at precisely the right time.</string>
     <string name="affirmation10">I will be present in all the moments that this day brings.</string>
     <string name="affirmations">Affirmations</string>
+
+    <!--  Words  -->
+    <string name="detail_prefix">Words That Start With</string>
+    <string name="action_switch_layout">Switch Layout</string>
+    <string name="look_up_word">Look up word in a Browser Search</string>
+    <string name="look_up_words">Show Stored Words</string>
+    <string name="words">Words</string>
 
 </resources>
