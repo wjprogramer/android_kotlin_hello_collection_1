@@ -9,6 +9,17 @@ import com.wjprogrammer.happybirthday.activities.words.adapter.WordAdapter
 import com.wjprogrammer.happybirthday.databinding.ActivityWordDetailBinding
 
 class WordDetailActivity : AppCompatActivity() {
+
+    /**
+     * Provides global access to these variables from anywhere in the app
+     * via DetailActivity.<variable> without needing to create
+     * a DetailActivity instance.
+     */
+    companion object {
+        const val LETTER = "letter"
+        const val SEARCH_PREFIX = "https://www.google.com/search?q="
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,7 +32,7 @@ class WordDetailActivity : AppCompatActivity() {
         // Retrieve the LETTER from the Intent extras
         // intent.extras.getString returns String? (String or null)
         // so toString() guarantees that the value will be a String
-        val letterId = "A"
+        val letterId = intent?.extras?.getString(LETTER).toString()
 
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
