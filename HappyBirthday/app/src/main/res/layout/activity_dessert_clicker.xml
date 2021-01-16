@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text='@{"$" + revenue.toString()}'
-            android:textColor="@color/green"
+            android:textColor="@color/green2"
             android:textSize="@dimen/large_text_size"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
