@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.wjprogrammer.happybirthday.R
+import com.wjprogrammer.happybirthday.activities.affirmations.AffirmationsActivity
 import com.wjprogrammer.happybirthday.activities.diceRoller.DiceRollerActivity
 import com.wjprogrammer.happybirthday.activities.themes.ThemeActivity
 import com.wjprogrammer.happybirthday.activities.tipTime.TipTimeActivity
 
 class MenuActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
@@ -31,5 +33,12 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, ThemeActivity::class.java)
             startActivity(intent)
         }
+
+        val affirmationButton: Button = findViewById(R.id.button_affirmations)
+        affirmationButton.setOnClickListener {
+            val intent = Intent(this, AffirmationsActivity::class.java)
+            startActivity(intent)
+        }
     }
+
 }
