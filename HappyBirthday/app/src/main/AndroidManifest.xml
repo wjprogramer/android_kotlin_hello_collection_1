@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyBirthday">
-        <activity android:name=".activities.dessert_clicker.DessertClickerActivity"></activity>
+        <activity android:name=".activities.dessert_clicker.DessertClickerActivity" />
         <activity android:name=".activities.words.sub_activities.WordDetailActivity" />
         <activity android:name=".activities.words.WordsActivity" />
-        <activity android:name=".activities.affirmations.AffirmationsActivity" />
+        <activity android:name=".activities.affirmations.AffirmationsActivity"
+            android:theme="@style/Theme.Affirmations" />
         <activity android:name=".activities.themes.ThemeActivity" />
         <activity android:name=".activities.tipTime.TipTimeActivity" />
         <activity android:name=".activities.menu.MenuActivity" />
