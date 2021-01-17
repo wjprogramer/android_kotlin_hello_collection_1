@@ -3,6 +3,8 @@ package com.wjprogrammer.happybirthday.activities.dessert_clicker
 import android.content.ActivityNotFoundException
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -11,7 +13,15 @@ import androidx.databinding.DataBindingUtil
 import com.wjprogrammer.happybirthday.R
 import com.wjprogrammer.happybirthday.databinding.ActivityDessertClickerBinding
 
+// onSaveInstanceState Bundle Keys
+const val KEY_REVENUE = "revenue_key"
+const val KEY_DESSERT_SOLD = "dessert_sold_key"
+
+// tag for logging
+const val TAG = "DessertClickerActivity"
+
 class DessertClickerActivity : AppCompatActivity() {
+
     private var revenue = 0
     private var dessertsSold = 0
 
@@ -48,6 +58,7 @@ class DessertClickerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.DessertClicker)
         super.onCreate(savedInstanceState)
+        Log.d(TAG, "onCreate Called")
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_dessert_clicker)
@@ -56,12 +67,75 @@ class DessertClickerActivity : AppCompatActivity() {
             onDessertClicked()
         }
 
+        // If there is a savedInstanceState bundle, then you're "restarting" the activity
+        // If there isn't a bundle, then it's a "fresh" start
+        if (savedInstanceState != null) {
+            revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
+            dessertsSold = savedInstanceState.getInt(KEY_DESSERT_SOLD, 0)
+            // Show the correct dessert
+            showCurrentDessert()
+        }
+
         // Set the TextViews to the right values
         binding.revenue = revenue
         binding.amountSold = dessertsSold
 
         // Make sure the correct dessert is showing
         binding.dessertButton.setImageResource(currentDessert.imageId)
+    }
+
+    /**
+     *  to start it and make it visible on the screen.
+     */
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart Called")
+    }
+
+    /**
+     * to give the activity focus and make it ready for the user to interact with it.
+     */
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume Called")
+    }
+
+    /**
+     * a place to put code that you only want to call if your activity is not being started for the first time.
+     */
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop Called")
+    }
+
+    /**
+     * Called when the user navigates away from the app but might come back
+     * 另外一個同名函數也可以用 (outState: Bundle, outPersistentState: PersistableBundle)
+     */
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "onSaveInstanceState Called")
+        outState.putInt(KEY_REVENUE, revenue)
+        outState.putInt(KEY_DESSERT_SOLD, dessertsSold)
+    }
+
+    /**
+     * the activity was fully shut down and can be garbage-collected.
+     * 可以透過 `finish()` shut down activity
+     */
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy Called")
     }
 
     /**
