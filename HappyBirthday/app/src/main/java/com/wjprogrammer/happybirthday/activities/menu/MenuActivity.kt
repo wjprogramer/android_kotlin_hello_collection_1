@@ -11,6 +11,7 @@ import com.wjprogrammer.happybirthday.activities.diceRoller.DiceRollerActivity
 import com.wjprogrammer.happybirthday.activities.themes.ThemeActivity
 import com.wjprogrammer.happybirthday.activities.tipTime.TipTimeActivity
 import com.wjprogrammer.happybirthday.activities.words.WordsActivity
+import com.wjprogrammer.happybirthday.activities.words2.Words2Activity
 
 class MenuActivity : AppCompatActivity() {
 
@@ -45,6 +46,12 @@ class MenuActivity : AppCompatActivity() {
         val wordsButton: Button = findViewById(R.id.button_words)
         wordsButton.setOnClickListener {
             val intent = Intent(this, WordsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val wordsButton2: Button = findViewById(R.id.button_words2)
+        wordsButton2.setOnClickListener {
+            val intent = Intent(this, Words2Activity::class.java)
             startActivity(intent)
         }
 
