@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.wjprogrammer.happybirthday.R
-import com.wjprogrammer.happybirthday.activities.words2.sub_activities.WordDetail2Activity
+import com.wjprogrammer.happybirthday.activities.words2.fragments.LetterListFragmentDirections
 
 class LetterAdapter :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
@@ -25,9 +26,6 @@ class LetterAdapter :
         return list.size
     }
 
-    /**
-     * Creates new views with R.layout.item_view as its template
-     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LetterViewHolder {
         val layout = LayoutInflater
             .from(parent.context)
@@ -39,16 +37,19 @@ class LetterAdapter :
 
     /**
      * Replaces the content of an existing view with new data
+     * 注意 `setOnClickListener` 與原本不同
      */
     override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
         val item = list[position]
         holder.button.text = item.toString()
 
         holder.button.setOnClickListener {
-            val context = holder.view.context
-            val intent = Intent(context, WordDetail2Activity::class.java)
-            intent.putExtra(WordDetail2Activity.LETTER, holder.button.text.toString())
-            context.startActivity(intent)
+            // Create an action from WordList to DetailList
+            // using the required arguments
+            val action = LetterListFragmentDirections
+                .actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
+            // Navigate using that action
+            holder.view.findNavController().navigate(action)
         }
     }
 

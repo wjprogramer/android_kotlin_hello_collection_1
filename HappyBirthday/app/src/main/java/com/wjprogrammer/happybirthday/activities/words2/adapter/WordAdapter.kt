@@ -10,9 +10,11 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.wjprogrammer.happybirthday.R
-import com.wjprogrammer.happybirthday.activities.words2.sub_activities.WordDetail2Activity
+import com.wjprogrammer.happybirthday.activities.words2.fragments.LetterListFragmentDirections
+import com.wjprogrammer.happybirthday.activities.words2.fragments.WordListFragment
 
 class WordAdapter(private val letterId: String, context: Context) :
     RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
@@ -53,7 +55,7 @@ class WordAdapter(private val letterId: String, context: Context) :
         holder.button.text = item
 
         holder.button.setOnClickListener {
-            val queryUrl: Uri = Uri.parse("${WordDetail2Activity.SEARCH_PREFIX}${item}")
+            val queryUrl: Uri = Uri.parse("${WordListFragment.SEARCH_PREFIX}${item}")
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             context.startActivity(intent)
         }

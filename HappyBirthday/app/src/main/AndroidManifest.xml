@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyBirthday">
-        <activity android:name=".activities.words2.sub_activities.WordDetail2Activity"
-            android:theme="@style/Theme.Words" />
         <activity android:name=".activities.words2.Words2Activity"
             android:theme="@style/Theme.Words" />
         <activity android:name=".activities.dessert_clicker.DessertClickerActivity" />
