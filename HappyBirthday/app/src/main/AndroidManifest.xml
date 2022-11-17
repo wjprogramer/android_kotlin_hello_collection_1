@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HappyBirthday">
-        <activity android:name=".activities.words2.Words2Activity"
+        <activity
+            android:name=".activities.birthday_card.BirthdayCardActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.words2.Words2Activity"
             android:theme="@style/Theme.Words" />
         <activity android:name=".activities.dessert_clicker.DessertClickerActivity" />
         <activity
@@ -29,7 +37,8 @@
             android:theme="@style/Theme.TipTime" />
         <activity android:name=".activities.diceRoller.DiceRollerActivity" />
         <activity android:name=".activities.menu.MenuActivity" />
-        <activity android:name=".activities.main.MainActivity">
+        <activity android:name=".activities.main.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

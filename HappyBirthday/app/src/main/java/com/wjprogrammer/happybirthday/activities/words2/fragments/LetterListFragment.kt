@@ -30,18 +30,21 @@ class LetterListFragment : Fragment() {
     // Keeps track of which LayoutManager is in use for the [RecyclerView]
     private var isLinearLayoutManager = true
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        val inflater = activity?.menuInflater ?: return
 
-        // Fragment 沒有 `menuInflater` (Activity's global property)
-        setHasOptionsMenu(true) // -> onCreateOptionsMenu
+        inflater.inflate(R.menu.layout_word_menu, menu)
+
+        val layoutButton = menu.findItem(R.id.action_switch_layout)
+        setIcon(layoutButton)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Retrieve and inflate the layout for this fragment
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -63,12 +66,14 @@ class LetterListFragment : Fragment() {
         _binding = null
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.layout_word_menu, menu)
 
-        val layoutButton = menu.findItem(R.id.action_switch_layout)
-        setIcon(layoutButton)
     }
+
+//    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
+//        super.onCreateContextMenu(menu, v, menuInfo)
+//    }
 
     /**
      * Sets the LayoutManager for the [RecyclerView] based on the desired orientation of the list.
@@ -95,10 +100,12 @@ class LetterListFragment : Fragment() {
             else ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_linear_layout)
     }
 
+
+
     /**
      * Determines how to handle interactions with the selected [MenuItem]
      */
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
                 // Sets isLinearLayoutManager (a Boolean) to the opposite value
@@ -114,8 +121,7 @@ class LetterListFragment : Fragment() {
             // when clauses require that all possible paths be accounted for explicitly,
             // for instance both the true and false cases if the value is a Boolean,
             // or an else to catch all unhandled cases.
-            else -> super.onOptionsItemSelected(item)
+            else -> super.onContextItemSelected(item)
         }
     }
-
 }

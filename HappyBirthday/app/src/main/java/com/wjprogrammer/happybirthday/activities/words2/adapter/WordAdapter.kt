@@ -10,10 +10,8 @@ import android.view.ViewGroup
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.wjprogrammer.happybirthday.R
-import com.wjprogrammer.happybirthday.activities.words2.fragments.LetterListFragmentDirections
 import com.wjprogrammer.happybirthday.activities.words2.fragments.WordListFragment
 
 class WordAdapter(private val letterId: String, context: Context) :
@@ -65,17 +63,17 @@ class WordAdapter(private val letterId: String, context: Context) :
     companion object Accessibility : View.AccessibilityDelegate() {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun onInitializeAccessibilityNodeInfo(
-            host: View?,
-            info: AccessibilityNodeInfo?
+            host: View,
+            info: AccessibilityNodeInfo
         ) {
             super.onInitializeAccessibilityNodeInfo(host, info)
-            val customString = host?.context?.getString(R.string.look_up_word)
+            val customString = host.context?.getString(R.string.look_up_word)
             val customClick =
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfo.ACTION_CLICK,
                     customString
                 )
-            info?.addAction(customClick)
+            info.addAction(customClick)
         }
     }
 }

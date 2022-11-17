@@ -55,18 +55,15 @@ class LetterAdapter :
 
     companion object Accessibility : View.AccessibilityDelegate() {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
-        override fun onInitializeAccessibilityNodeInfo(
-            host: View?,
-            info: AccessibilityNodeInfo?
-        ) {
+        override fun onInitializeAccessibilityNodeInfo(host: View, info: AccessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(host, info)
-            val customString = host?.context?.getString(R.string.look_up_words)
+            val customString = host.context?.getString(R.string.look_up_words)
             val customClick =
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfo.ACTION_CLICK,
                     customString
                 )
-            info?.addAction(customClick)
+            info.addAction(customClick)
         }
     }
 }
