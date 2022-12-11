@@ -1,0 +1,12 @@
+package com.wjprogrammer.happybirthday_compose.features.unscramble.ui
+
+/**
+ * Data class that represents the game UI state
+ */
+data class GameUiState(
+    val currentScrambledWord: String = "",
+    val currentWordCount: Int = 0,
+    val score: Int = 0,
+    val isGuessedWordWrong: Boolean = false,
+    val isGameOver: Boolean = false
+)

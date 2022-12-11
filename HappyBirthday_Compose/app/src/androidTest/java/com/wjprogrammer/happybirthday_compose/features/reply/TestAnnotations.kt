@@ -1,0 +1,5 @@
+package com.wjprogrammer.happybirthday_compose.features.reply
+
+annotation class TestCompactWidth
+annotation class TestMediumWidth
+annotation class TestExpandedWidth
