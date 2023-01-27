@@ -16,6 +16,12 @@
         <item name="android:statusBarColor">@color/grey_50</item>
     </style>
 
+    <!-- Superheroes -->
+    <style name="Theme.Superheroes" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/superheroes_background_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
     <!-- Dessert Clicker -->
     <style name="Theme.DessertClicker" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/green_800</item>

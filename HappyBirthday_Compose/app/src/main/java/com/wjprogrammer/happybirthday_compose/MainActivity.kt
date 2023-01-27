@@ -11,6 +11,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import com.wjprogrammer.happybirthday_compose.features.marsphotos.ui.MarsPhotosApp
 import com.wjprogrammer.happybirthday_compose.features.marsphotos.ui.theme.MarsPhotosTheme
 import com.wjprogrammer.happybirthday_compose.features.affirmations.AffirmationApp
@@ -25,10 +26,25 @@ import com.wjprogrammer.happybirthday_compose.features.dice_roller.DiceRollerApp
 import com.wjprogrammer.happybirthday_compose.features.dice_roller.ui.theme.DiceRollerTheme
 import com.wjprogrammer.happybirthday_compose.features.reply.ui.ReplyApp
 import com.wjprogrammer.happybirthday_compose.features.reply.ui.theme.ReplyTheme
+import com.wjprogrammer.happybirthday_compose.features.tip_time.TipTimeScreen
+import com.wjprogrammer.happybirthday_compose.features.tip_time.ui.theme.TipTimeTheme
 import com.wjprogrammer.happybirthday_compose.features.unscramble.ui.GameScreen
 import com.wjprogrammer.happybirthday_compose.features.unscramble.ui.theme.UnscrambleTheme
 import com.wjprogrammer.happybirthday_compose.features.woof.WoofApp
 import com.wjprogrammer.happybirthday_compose.features.woof.ui.theme.WoofTheme
+import com.wjprogrammer.happybirthday_compose.my_codelab_practices.business_card_app.BusinessCardApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.compose_article.ComposeArticleApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.compose_article.ui.theme.ComposeArticleTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.compose_quadrant.ComposeQuadrantApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.compose_quadrant.ui.theme.ComposeQuadrantTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.courses.TopicGrid
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.courses.ui.theme.CoursesTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.lemonade.LemonApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.lemonade.ui.theme.LemonadeTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.super_heroes.SuperheroesApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.super_heroes.ui.theme.SuperheroesTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.task_completed.TaskCompletedScreen
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.task_completed.ui.theme.TaskCompletedTheme
 
 // tag for logging
 private const val TAG = "MainActivity"
@@ -38,14 +54,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
 //        setBirthdayContent()
+//        buildComposeArticle()
+//        buildTaskCompletedApp()
+//        buildComposeQuadrant()
+//        buildCodelabMyPracticeCreateBusinessCardApp()
 //        setDiceRoller()
+//        buildClickBehavior()
+//        buildCalculateTip()
 //        buildAffirmationApp()
+//        buildCoursesApp()
 //        buildWoofApp()
+        buildSuperheroesApp()
 //        buildDessertClickerApp()
 //        buildUnscrambleApp()
 //        setCupcakeContent()
 //        buildReplyApp()
-        buildMarsApp()
+//        buildMarsApp()
     }
 
     // Unit 1: Your first Android app
@@ -61,12 +85,80 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    // Practice: Compose Article
+    private fun buildComposeArticle() {
+        setContent {
+            ComposeArticleTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(color = MaterialTheme.colors.background) {
+                    ComposeArticleApp()
+                }
+            }
+        }
+    }
+
+    // Practice: Task Completed
+    private fun buildTaskCompletedApp() {
+        setContent {
+            TaskCompletedTheme {
+                // A surface container using the 'background' color from the theme
+                Surface {
+                    TaskCompletedScreen()
+                }
+            }
+        }
+    }
+
+    // Practice: Compose Quadrant
+    private fun buildComposeQuadrant() {
+        setContent {
+            ComposeQuadrantTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(color = MaterialTheme.colors.background) {
+                    ComposeQuadrantApp()
+                }
+            }
+        }
+    }
+
+    // Codelab My Practice: Create a Business Card app
+    private fun buildCodelabMyPracticeCreateBusinessCardApp() {
+        setContent {
+            Surface(
+                color = Color(0xFF073042)
+            ) {
+                BusinessCardApp()
+            }
+        }
+    }
+
     // Unit 2: Building app UI
     // Add a button to an app
     private fun setDiceRoller() {
         setContent {
             DiceRollerTheme {
                 DiceRollerApp()
+            }
+        }
+    }
+
+    // Practice: Click Behavior
+    private fun buildClickBehavior() {
+        setContent {
+            LemonadeTheme {
+                LemonApp()
+            }
+        }
+    }
+
+    // Interacting with UI and state
+    // Calculate a custom tip
+    private fun buildCalculateTip() {
+        setContent {
+            TipTimeTheme {
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    TipTimeScreen()
+                }
             }
         }
     }
@@ -79,11 +171,35 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    // Practice: Build a grid
+    private fun buildCoursesApp() {
+        setContent {
+            CoursesTheme {
+                // A surface container using the 'background' color from the theme
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colors.background
+                ) {
+                    TopicGrid()
+                }
+            }
+        }
+    }
+
     // Build beautiful apps
     private fun buildWoofApp() {
         setContent {
             WoofTheme {
                 WoofApp()
+            }
+        }
+    }
+
+    // Practice: Build Superheroes app
+    private fun buildSuperheroesApp() {
+        setContent {
+            SuperheroesTheme {
+                SuperheroesApp()
             }
         }
     }

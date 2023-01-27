@@ -40,7 +40,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat.startActivity
 import com.wjprogrammer.happybirthday_compose.R
-import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.data.Datasource.dessertList
 import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.ui.theme.DessertClickerTheme
 import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.model.Dessert
 

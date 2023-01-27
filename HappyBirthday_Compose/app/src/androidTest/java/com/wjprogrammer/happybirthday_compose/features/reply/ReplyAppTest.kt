@@ -3,10 +3,10 @@ package com.wjprogrammer.happybirthday_compose.features.reply
 import androidx.activity.ComponentActivity
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import com.wjprogrammer.happybirthday_compose.features.reply.R
 import com.wjprogrammer.happybirthday_compose.features.reply.ui.ReplyApp
 import org.junit.Rule
 import org.junit.Test
+import com.wjprogrammer.happybirthday_compose.R
 
 class ReplyAppTest {
 

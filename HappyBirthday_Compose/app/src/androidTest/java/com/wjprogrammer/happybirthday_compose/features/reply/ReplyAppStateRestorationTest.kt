@@ -11,11 +11,11 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onChildren
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import com.wjprogrammer.happybirthday_compose.features.reply.R
 import com.wjprogrammer.happybirthday_compose.features.reply.data.local.LocalEmailsDataProvider
 import com.wjprogrammer.happybirthday_compose.features.reply.ui.ReplyApp
 import org.junit.Rule
 import org.junit.Test
+import com.wjprogrammer.happybirthday_compose.R
 
 class ReplyAppStateRestorationTest {
 

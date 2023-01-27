@@ -4,6 +4,10 @@
         <item name="android:statusBarColor">@color/grey_900</item>
     </style>
 
+    <style name="Theme.Superheroes" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/superheroes_background_light</item>
+    </style>
+
     <style name="Theme.Unscramble" parent="android:style/Theme.Material.NoActionBar">
         <item name="android:statusBarColor">@color/black</item>
     </style>

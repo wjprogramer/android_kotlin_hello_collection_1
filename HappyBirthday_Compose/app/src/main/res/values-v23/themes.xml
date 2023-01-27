@@ -7,6 +7,12 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
+    <!-- Superheroes -->
+    <style name="Theme.Superheroes" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/superheroes_background_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
     <!-- Unscramble -->
     <style name="Theme.Unscramble" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/white</item>

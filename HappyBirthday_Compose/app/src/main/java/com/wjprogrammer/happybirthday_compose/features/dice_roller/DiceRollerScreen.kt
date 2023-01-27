@@ -41,6 +41,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         // when the value of the `result` variable updates,
         // a recomposition is triggered, the value of the result is reflected, and the UI refreshes.
     }
+
     val imageResource = when (result) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
@@ -51,7 +52,10 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     }
 
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-        Image(painter = painterResource(imageResource), contentDescription = result.toString())
+        Image(
+            painter = painterResource(imageResource),
+            contentDescription = result.toString()
+        )
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { result = (1..6).random() }) {
             Text(text = stringResource(R.string.roll), fontSize = 24.sp)

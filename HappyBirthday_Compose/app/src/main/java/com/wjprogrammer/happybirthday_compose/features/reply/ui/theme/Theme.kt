@@ -14,6 +14,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 
 // Material 3 color schemes
 private val replyDarkColorScheme = darkColorScheme(
@@ -90,9 +91,13 @@ fun ReplyTheme(
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
+        val currentWindow = (view.context as? Activity)?.window
+
         SideEffect {
             (view.context as Activity).window.statusBarColor = replyColorScheme.primary.toArgb()
-            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
+            // Deprecated
+            // ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = darkTheme
+            WindowCompat.getInsetsController(currentWindow!!, view).isAppearanceLightStatusBars = darkTheme
         }
     }
 

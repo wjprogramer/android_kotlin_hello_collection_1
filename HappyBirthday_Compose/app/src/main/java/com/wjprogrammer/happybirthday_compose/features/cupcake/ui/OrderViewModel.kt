@@ -36,7 +36,9 @@ class OrderViewModel : ViewModel() {
         _uiState.update { currentState ->
             currentState.copy(
                 quantity = numberCupcakes,
-                price = calculatePrice(quantity = numberCupcakes)
+                price = calculatePrice(
+                    quantity = numberCupcakes
+                )
             )
         }
     }
