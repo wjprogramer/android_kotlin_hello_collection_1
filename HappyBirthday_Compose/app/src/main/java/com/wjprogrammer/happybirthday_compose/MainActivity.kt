@@ -20,6 +20,8 @@ import com.wjprogrammer.happybirthday_compose.features.birthday.ui.theme.HappyBi
 import com.wjprogrammer.happybirthday_compose.features.cupcake.CupcakeApp
 import com.wjprogrammer.happybirthday_compose.features.cupcake.ui.theme.CupcakeTheme
 import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.DessertClickerApp
+import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.DessertClickerAppWithViewModel
+import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.MyDessertClickerAppWithViewModelPreview
 import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.data.Datasource
 import com.wjprogrammer.happybirthday_compose.features.dessert_clicker.ui.theme.DessertClickerTheme
 import com.wjprogrammer.happybirthday_compose.features.dice_roller.DiceRollerApp
@@ -64,10 +66,11 @@ class MainActivity : ComponentActivity() {
 //        buildAffirmationApp()
 //        buildCoursesApp()
 //        buildWoofApp()
-        buildSuperheroesApp()
+//        buildSuperheroesApp()
 //        buildDessertClickerApp()
 //        buildUnscrambleApp()
-//        setCupcakeContent()
+//        buildDessertClickerAppWithViewModel()
+        setCupcakeContent()
 //        buildReplyApp()
 //        buildMarsApp()
     }
@@ -225,6 +228,15 @@ class MainActivity : ComponentActivity() {
                 ) {
                     GameScreen()
                 }
+            }
+        }
+    }
+
+    // Practice
+    private fun buildDessertClickerAppWithViewModel() {
+        setContent {
+            DessertClickerTheme {
+                DessertClickerAppWithViewModel()
             }
         }
     }

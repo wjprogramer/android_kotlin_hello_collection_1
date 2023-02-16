@@ -18,7 +18,7 @@ package com.wjprogrammer.happybirthday_compose.official_practice_solutions.super
 import com.wjprogrammer.happybirthday_compose.R
 
 object HeroesRepository {
-    val heroes = listOf(
+    private val baseHeroes = listOf(
         Hero(
             nameRes = R.string.hero1,
             descriptionRes = R.string.description1,
@@ -50,4 +50,9 @@ object HeroesRepository {
             imageRes = R.drawable.android_superhero6
         )
     )
+
+    val heroes = listOf(
+        baseHeroes.toMutableList(),
+        baseHeroes.toMutableList(),
+    ).flatten()
 }
