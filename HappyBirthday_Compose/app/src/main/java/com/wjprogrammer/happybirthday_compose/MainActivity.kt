@@ -43,6 +43,8 @@ import com.wjprogrammer.happybirthday_compose.official_practice_solutions.course
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.courses.ui.theme.CoursesTheme
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.lemonade.LemonApp
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.lemonade.ui.theme.LemonadeTheme
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.sports.ui.SportsApp
+import com.wjprogrammer.happybirthday_compose.official_practice_solutions.sports.ui.theme.SportsTheme
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.super_heroes.SuperheroesApp
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.super_heroes.ui.theme.SuperheroesTheme
 import com.wjprogrammer.happybirthday_compose.official_practice_solutions.task_completed.TaskCompletedScreen
@@ -70,8 +72,9 @@ class MainActivity : ComponentActivity() {
 //        buildDessertClickerApp()
 //        buildUnscrambleApp()
 //        buildDessertClickerAppWithViewModel()
-        setCupcakeContent()
+//        setCupcakeContent()
 //        buildReplyApp()
+        buildSportsApp()
 //        buildMarsApp()
     }
 
@@ -258,6 +261,19 @@ class MainActivity : ComponentActivity() {
                 val windowSize = calculateWindowSizeClass(this)
 
                 ReplyApp(
+                    windowSize = windowSize.widthSizeClass,
+                )
+            }
+        }
+    }
+
+    // Practice: Build Sports app
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
+    private fun buildSportsApp() {
+        setContent {
+            SportsTheme {
+                val windowSize = calculateWindowSizeClass(this)
+                SportsApp(
                     windowSize = windowSize.widthSizeClass,
                 )
             }

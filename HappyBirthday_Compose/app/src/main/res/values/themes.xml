@@ -40,6 +40,11 @@
     <!-- Reply -->
     <style name="Theme.Reply" parent="android:Theme.Material.Light.NoActionBar" />
 
+    <!-- Sports -->
+    <style name="Theme.Sports" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/purple_700</item>
+    </style>
+
     <!-- Mars -->
     <style name="Theme.MarsPhotosTheme" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/purple_700</item>
